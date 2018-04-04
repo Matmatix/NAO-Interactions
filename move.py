@@ -14,7 +14,7 @@ def deg(f):
         for _ in range(0, num-1):
             motion.moveTo(0.0, 0.0, deg(180))
         return deg(f % 180)
-    if f < -180:
+    elif f < -180:
         num = int(math.ceil(float(math.fabs(f)) / 180))
         print(num)
         for _ in range(0, num-1):
