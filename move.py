@@ -11,10 +11,10 @@ def deg(f):
     if f > 180:
         num = int(math.ceil(float(f) / 180))
         print(num)
-        for i in range(0, num-1):
+        for _ in range(0, num-1):
             motion.moveTo(0.0, 0.0, deg(180))
         return deg(f % 180)
-    elif f < -180:
+    if f < -180:
         num = int(math.ceil(float(math.fabs(f)) / 180))
         print(num)
         for i in range(0, num-1):
@@ -28,7 +28,6 @@ def deg(f):
 
 #broker = ALBroker("broker", "0.0.0.0", 0, "127.0.0.1", 55161)
 
-global motion
 motion =ALProxy("ALMotion", "127.0.0.1", 56454)
 
 
