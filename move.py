@@ -8,7 +8,7 @@ from naoqi import ALBroker
 from naoqi import ALModule
 
 def deg(f):
-    sign = (1, -1)[f < 0]
+    sign = -1 if f < 0 else 1
     f=math.fabs(f)
     if f > 180:
         num = int(math.ceil(float(f) / 180))
