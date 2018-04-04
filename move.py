@@ -20,8 +20,8 @@ def deg(f):
         for _ in range(0, num-1):
             motion.moveTo(0.0, 0.0, deg(-180))
         return deg(-(f % 180))
-    else:
-        return f*3.1415/180
+
+    return f*3.1415/180
 
 
 
