@@ -8,20 +8,15 @@ from naoqi import ALBroker
 from naoqi import ALModule
 
 def deg(f):
+    sign = (1, -1)[f < 0]
+    f=math.fabs(f)
     if f > 180:
         num = int(math.ceil(float(f) / 180))
         print(num)
         for _ in range(0, num-1):
-            motion.moveTo(0.0, 0.0, deg(180))
-        return deg(f % 180)
-    elif f < -180:
-        num = int(math.ceil(float(math.fabs(f)) / 180))
-        print(num)
-        for _ in range(0, num-1):
-            motion.moveTo(0.0, 0.0, deg(-180))
-        return deg(-(f % 180))
-
-    return f*3.1415/180
+            motion.moveTo(0.0, 0.0, deg(sign*180))
+        return deg(sign*(f % 180))
+    return sign*(f*3.1415/180)
 
 
 
