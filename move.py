@@ -29,6 +29,6 @@ tts = ALProxy("ALTextToSpeech", "127.0.0.1", 56454)
 motion.moveInit()
 
 # Limits values to max or min values
-id = motion.post.moveTo(1.0, 0.0, 0.0)
-motion.wait(id, 0)
+id_m = motion.post.moveTo(1.0, 0.0, 0.0)
+motion.wait(id_m, 0)
 tts.say("I'm walking")
