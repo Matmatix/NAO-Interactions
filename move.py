@@ -23,8 +23,12 @@ def deg(f):
 
 #broker = ALBroker("broker", "0.0.0.0", 0, "127.0.0.1", 55161)
 
-motion =ALProxy("ALMotion", "127.0.0.1", 56454)
+motion = ALProxy("ALMotion", "127.0.0.1", 56454)
+tts = ALProxy("ALTextToSpeech", "127.0.0.1", 56454)
 
+motion.moveInit()
 
 # Limits values to max or min values
-motion.moveTo(0.0, 0.0, deg(-270))
+id = motion.post.moveTo(1.0, 0.0, 0.0)
+motion.wait(id, 0)
+tts.say("I'm walking")
